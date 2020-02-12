@@ -1,0 +1,75 @@
+Curso de LARAVEL - INICIADO EM 11/02/2020
+
+INSTALOU EXTENSOES NO CODE
+-----------------------------
+LARAVEL BLADE SNIPPETS
+LARAVEL GOTO CONTROLLER
+LARAVEL GOTO VIEW
+MAKDOWN ALL IN ONE
+VSCODE-ICONS
+DotENV
+
+
+CRIOU GITBASH LARAVEL
+git clone https://github.com/KaldirisArtefatos/LARAVEL.git
+
+
+LINKS DE FERRAMENTAS
+https://stackedit.io/
+https://mdbootstrap.com/education/bootstrap/
+
+
+INSTALAR O LARAVEL COMO GLOBAL
+Em qualquer pasta...    composer global require laravel/installer
+
+DEPOIS, CRIAR UMA PASTA QUE SERÀ A RAIZ DOS PROJETOS LARAVEL
+DENTRO, CRIAR O PROJETO:
+create-project --prefer-dist laravel/laravel trainning_ecom_laravel
+
+* Fiz ao contrario do aciuma na escola e funcionou
+
+INICIAR O SERVIDOR - DEVE SER RODADO NA PASTA DO PROJETO CRIADO...
+php artisan serve
+
+CRIAR UsuariosController COM O COMANDO ABAIXO:
+php artisan make:controller UsuariosController
+
+
+Dentro do UsuariosController.php  criado pelo comando php artisan make:controller UsuariosController
+DEVE SER RODADO NA PASTA DO PROJETO CRIADO...
+
+    public function listar(){
+        $usuarios = ["José", "Maria", "João"];
+        var_dump($usuarios);
+    }
+    public function listarComFiltros(Request $request)
+    {
+        var_dump($request->url());
+        var_dump($request->query('nome'));
+    }
+
+
+NO WEB PHP
+Route::get('/usuarios','UsuariosController@listar');
+Route::get('/usuarios/filtros','UsuariosController@listarComFiltros');
+
+
+http://127.0.0.1:8000/usuarios/filtros?nome=Marco
+Resposta no Browser
+string(38) "http://127.0.0.1:8000/usuarios/filtros" string(5) "Marco"
+
+
+NEW FOLDER EN VIEWS  ( RESOURCES/VIEWS/USUARIOS )
+CRIAR ARQUIVO   index.blade.php
+<ul>
+    @foreach ($usuarios as $usuario)
+        <li> <?php echo $usuario; ?></li>    ou    escrever assim essa linha: <li>{{$usuario}}</li>
+    @endforeach
+</ul>
+
+
+
+ELOQUENT  =  ORM  =  Object Relational Mapper.
+
+
+
