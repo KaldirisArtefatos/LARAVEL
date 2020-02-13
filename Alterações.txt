@@ -17,6 +17,25 @@ git clone https://github.com/KaldirisArtefatos/LARAVEL.git
 LINKS DE FERRAMENTAS
 https://stackedit.io/
 https://mdbootstrap.com/education/bootstrap/
+https://laravel.com/docs/6.x/controllers
+
+https://medium.com/@panjeh/laravel-session-flash-message-include-html-tag-link-href-ad9b5669c6e2
+
+https://fontawesome.com/icons/trash-alt?style=solid   
+EM LAYOUT.BLADE.PHP  coloca os links do BootStrap e FontAwesome
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+NO INDEX.BLADE.PHP
+<td>
+    <form method="post" action="/perfis/{{ $perfil->id }}">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger btn-sm">
+            <i class="far fa-trash-alt"></i>
+        </button>
+    </form>
+<td>
 
 
 INSTALAR O LARAVEL COMO GLOBAL
@@ -71,5 +90,16 @@ CRIAR ARQUIVO   index.blade.php
 
 ELOQUENT  =  ORM  =  Object Relational Mapper.
 
+// PARA CRIAR UM JOB DE ALTERAÇÂO NO BANCO
+php artisan make:migration create_table_perfis
 
+// Volta o que foi criado no ultimo JOB
+php artisan migrate:rollback --step=1
+
+// Executa o Migration que não tem na lista do banco
+php artisan migrate
+
+
+
+php artisan make:model Funcionarios -m
 
