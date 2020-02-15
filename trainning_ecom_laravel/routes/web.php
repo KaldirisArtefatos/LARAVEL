@@ -35,6 +35,14 @@ Route::get ('/funcionarios/create'  , 'FuncionariosController@create')->name('cr
 Route::post('/funcionarios/create'  , 'FuncionariosController@store');
 Route::delete('/funcionarios/{id}'  , 'FuncionariosController@destroy');
 
+// Botão exportar.
+Route::get('/funcionarios/csv', 'FuncionariosController@csv');
+Route::get('/funcionarios/email', 'FuncionariosController@email');
+
+Route::get('/autenticar', 'AutenticarController@index')->name('login');
+Route::post('/autenticar', 'AutenticarController@entrar');
+ 
+
 
 
 // Capturado de: https://laravel.com/docs/6.x/controllers

@@ -103,3 +103,19 @@ php artisan migrate
 
 php artisan make:model Funcionarios -m
 
+
+php artisan config:cache  <== Limpa o Cache.
+
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME="diegosr.trainning@gmail.com"
+MAIL_PASSWORD="Ntfil#40"
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS="diegosr.trainning@gmail.com"
+MAIL_FROM_NAME="${APP_NAME}"
+ 
+
+
+cmder    Programa concorrente do composer....   linha de comando.   Entende comandos do Linuxphp 
